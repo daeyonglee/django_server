@@ -8,6 +8,7 @@ class Profile(models.Model):
     bio = models.TextField(blank=True)
     website_url = models.URLField(blank=True)
 
+
 def on_post_save_for_user(sender, **kwargs):
     if kwargs['created']:
         user = kwargs['instance']
