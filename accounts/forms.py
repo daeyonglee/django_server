@@ -5,7 +5,7 @@ from django.core.validators import validate_email
 class SignupForm(UserCreationForm):
 
     def __init__(self, *args, **kwargs):
-        super().__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.fields['username'].validators = [validate_email]
         self.fields['username'].help_text = 'Enter Email Format.'
         self.fields['username'].label = 'Email'

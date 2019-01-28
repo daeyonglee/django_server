@@ -23,4 +23,5 @@ def on_post_save_for_user(sender, **kwargs):
         fail_silently=False,
     )
 
+
 post_save.connect(on_post_save_for_user, sender=settings.AUTH_USER_MODEL)
