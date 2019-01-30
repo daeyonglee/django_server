@@ -15,13 +15,13 @@ def on_post_save_for_user(sender, **kwargs):
         user = kwargs['instance']
         Profile.objects.create(user=user)
 
-    send_mail(
-        '환영합니다',
-        'Here is the message.',
-        'me@ldy.com',
-        [user.email],
-        fail_silently=False,
-    )
+    # send_mail(
+    #     '환영합니다',
+    #     'Here is the message.',
+    #     'me@ldy.com',
+    #     [user.email],
+    #     fail_silently=False,
+    # )
 
 
 post_save.connect(on_post_save_for_user, sender=settings.AUTH_USER_MODEL)
